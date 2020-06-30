@@ -10,22 +10,95 @@
    clear: both;
 }
 
+body {
+    font-family: 'Kanit', sans-serif;
+}
+
+/* ASIDE */
 .menu {
     height: calc(100% - 80px);
-    width: 150px;
-    background-color: tomato;
+    width: 200px;
+    background-color: rgb(4,4,4);
+    color: rgb(73,80,87);
     float: left;
     position: fixed;
     top: 0;
     left: 0;
 }
 
+.menu .logo {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px
+}
 
+.menu .logo img {
+    height: auto;
+    width: 75%;
+}
+
+
+.menu-icons li {
+    display: flex;
+    align-items: center;
+    padding: 7px 10px;
+}
+
+.menu-icons li:first-child {
+    color: white;
+    border-left: 1px solid yellow;
+}
+
+.menu-icons .fas {
+    font-size: 23px;
+    margin-right: 5px;
+}
+
+.playlist {
+    padding: 10px 10px;
+}
+
+.playlist h5 {
+    color: white;
+    text-transform: uppercase;
+}
+
+.crea-playlist {
+    display: flex;
+    align-items: center;
+    padding: 7px 0 10px;
+}
+
+.square {
+    height: 35px;
+    width: 35px;
+    color: black;
+    background-color: rgb(179,179,179);
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nome-playlist {
+    list-style: none;
+}
+
+.nome-playlist li {
+    padding: 7px 0;
+    font-size: 15px;
+}
+
+
+
+/* MAIN */
 .music {
     float: left;
-    width: calc(100% - 150px);
+    width: calc(100% - 200px);
     background-color: pink;
-    margin-left: 150px;
+    margin-left: 200px;
     margin-top: 80px;
     margin-bottom: 80px;
 
