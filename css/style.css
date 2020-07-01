@@ -1,3 +1,10 @@
+
+
+
+
+/* Spostare iva zanicchi in fondo all'aside */
+
+
 * {
    margin: 0;
    padding: 0;
@@ -12,6 +19,9 @@
 
 body {
     font-family: 'Kanit', sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    color: rgb(109, 113, 116);
 }
 
 /* ASIDE */
@@ -24,6 +34,9 @@ body {
     position: fixed;
     top: 0;
     left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .menu .logo {
@@ -52,7 +65,7 @@ body {
 }
 
 .menu-icons .fas {
-    font-size: 23px;
+    font-size: 17px;
     margin-right: 5px;
 }
 
@@ -90,18 +103,46 @@ body {
 
 .nome-playlist li {
     padding: 7px 0;
-    font-size: 15px;
+    font-size: 10px;
 }
 
+.utente {
+    padding: 10px 10px;
+    padding-right: 30px;
+}
+
+.utente .installa {
+    padding: 5px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid grey;
+}
+
+.utente .utenza {
+    display: flex;
+    color: white;
+
+}
+
+.utente .utenza .iva {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    margin-right: 15px;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRMSb7ljylKd3xU9oXuSwExWyZ8WP8up8wdVQ&usqp=CAU");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
 
 /* MAIN */
 .music {
     float: left;
     width: calc(100% - 200px);
-    background-color: pink;
+    /* background-color: tomato; */
+    /* background-image: linear-gradient(to bottom left, #8B0000 0%, #FF8C00 60%, #FFD700 100%); */
     margin-left: 200px;
-    margin-top: 80px;
+    padding-top: 80px;
     margin-bottom: 80px;
 
 }
@@ -119,6 +160,7 @@ body {
 }
 
 .music .upgrade button {
+    font-size: 12px;
     text-transform: uppercase;
     margin: 20px 5px;
     padding: 5px 40px;
@@ -129,18 +171,84 @@ body {
 }
 
 .music .navbar {
-    height: 60px;
     width: 100%;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
-.music section {
+.music .navbar .menu-navbar {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.music .navbar .menu-navbar li {
+    padding: 0 15px;
+    text-transform: uppercase;
+    color: rgb(109, 113, 116);
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.music .navbar .menu-navbar li hr {
+    width: 40%;
+    border: 1px solid yellow;
+}
+
+.music .sezione {
     width: 100%;
-    height: 200px;
-    background-color: yellowgreen;
-    border: 1px solid black;
+    padding: 0 30px;
+}
+
+.music .sezione .titolo-sezione {
+
+}
+
+.music .sezione .titolo-sezione h2 {
+    font-size: 20px;
+    color: white;
+}
+
+.music .sezione .row-sezione{
+    padding: 20px 0;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.music .sezione .row-sezione .card-music {
+    padding-bottom: 20px;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* flex: 0 0 200px; */
+}
+
+.music .sezione .row-sezione .card-music img {
+    width: 150px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.music .sezione .row-sezione .card-music h4 {
+    font-size: 15px;
+    color: white;
+}
+
+.music .sezione .row-sezione .card-music p {
+    font-size: 12px;
 }
 
 
+
+/* Player */
 .player {
     width: 100vw;
     height: 80px;
