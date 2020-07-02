@@ -52,11 +52,18 @@ body {
     width: 75%;
 }
 
+.menu .logo-xs {
+    display: none;
+}
 
 .menu-icons li {
     display: flex;
     align-items: center;
     padding: 7px 10px;
+}
+
+.xs {
+    display: none;
 }
 
 .menu-icons li:hover {
@@ -111,6 +118,8 @@ body {
 
 .nome-playlist {
     list-style: none;
+    height: 80px;
+    overflow: auto;
 }
 
 .nome-playlist li {
@@ -133,12 +142,18 @@ body {
     border-bottom: 1px solid grey;
 }
 
+.utente>i {
+    display: none;
+}
+
 .utente .installa:hover {
     color: white;
 }
 
 .utente .utenza {
+    width: 100%;
     display: flex;
+    justify-content: flex-start;
     color: white;
 
 }
@@ -147,13 +162,15 @@ body {
     height: 25px;
     width: 25px;
     border-radius: 50%;
-    margin-right: 15px;
     background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRMSb7ljylKd3xU9oXuSwExWyZ8WP8up8wdVQ&usqp=CAU");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 }
 
+.utente .utenza p {
+    margin-left: 15px;
+}
 
 /* MAIN */
 .music {
@@ -164,6 +181,8 @@ body {
     margin-left: 200px;
     padding-top: 80px;
     margin-bottom: 80px;
+    display: flex;
+    flex-direction: column;
 
 }
 
@@ -174,6 +193,7 @@ body {
     opacity: .9;
     position: fixed;
     top: 0;
+    right: 0;
     display: flex;
     justify-content: flex-end;
     z-index: 100;
@@ -232,11 +252,10 @@ body {
 .music .sezione {
     width: 100%;
     padding: 0 30px;
+    display: flex;
+    flex-direction: column;
 }
 
-.music .sezione .titolo-sezione {
-
-}
 
 .music .sezione .titolo-sezione h2 {
     font-size: 20px;
@@ -257,11 +276,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 0 0 150px;
+    flex-basis: 150px;
 }
 
 .music .sezione .row-sezione .card-music img {
-    width: 150px;
+    width: 100%;
     height: auto;
     border-radius: 50%;
     margin-bottom: 15px;
@@ -416,10 +435,22 @@ body {
 
 .play .play-tempo .tempo-barra {
     width: 300px;
+    height: 1px;
     border: 1px solid rgb(109, 113, 116);
     position: relative;
+}
 
-
+.play .play-tempo .tempo-barra .cerchio {
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 0%;
+    left: 20%;
+    transform: translate(-50% , -50%);
+    display: none;
+    z-index: 1;
 }
 
 .play .play-tempo .tempo-barra .tempo-barra-bianca {
@@ -427,6 +458,14 @@ body {
     border: 1px solid white;
     position: absolute;
     transform: translate( 0, -50% );
+}
+
+.play .play-tempo .tempo-barra:hover .tempo-barra-bianca {
+    border-color: yellow;
+}
+
+.play .play-tempo .tempo-barra:hover .cerchio {
+    display: block;
 }
 
 .volume {
@@ -451,9 +490,103 @@ body {
 
 }
 
+.cerchio-volume {
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 0%;
+    left: 20%;
+    transform: translate(-50% , -50%);
+    display: none;
+    z-index: 1;
+}
+
+
 .volume .volume-barra .volume-barra-bianca {
     width: 20%;
     border: 1px solid white;
     position: absolute;
     transform: translate( 0, -50% );
+}
+
+.volume .volume-barra:hover .cerchio-volume {
+    display: block;
+}
+
+.volume .volume-barra:hover .volume-barra-bianca {
+    border-color: yellow;
+}
+
+
+@media screen and (max-width: 767px) {
+    .menu {
+        width: 50px;
+    }
+
+    .menu .logo {
+        display: none;
+    }
+
+    .menu .logo-xs {
+        height: 50%;
+        display: block;
+        filter: invert(100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu .logo-xs img {
+        height: auto;
+        width: 60%;
+    }
+
+    .menu-icons:not(.xs) {
+        display: none;
+    }
+
+    .xs {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .playlist {
+        display: none;
+    }
+
+    .installa {
+        display: none;
+    }
+
+    .utente {
+        padding: 10px 10px;
+    }
+
+    .utente>i {
+        display: block;
+        font-size: 15px;
+        padding-left: 7px;
+    }
+
+    .utenza .iva {
+        margin: 10px auto;
+    }
+
+
+    .utenza p {
+        display: none;
+    }
+
+    .music {
+        width: calc(100% - 50px);
+        margin-left: 49px;
+    }
+
+    .music .upgrade {
+        width: calc(100% - 50px);
+        margin-left: 49px;
+    }
 }
